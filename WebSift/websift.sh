@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Color codes
 BrightRed="\e[1;91m"
@@ -50,7 +50,7 @@ install_dependencies() {
              elif command -v dnf &> /dev/null; then
                   sudo dnf install curl -y
              elif command -v pacman &> /dev/null; then
-                  sudo pacman -Sy curl --noconfirm
+                  sudo pacman -Syu curl --noconfirm
              else
                   echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}Package manager not found. Please install curl manually."
                   exit 1
@@ -69,7 +69,7 @@ install_dependencies() {
              elif command -v dnf &> /dev/null; then
                   sudo dnf install wget -y
              elif command -v pacman &> /dev/null; then
-                  sudo pacman -Sy wget --noconfirm
+                  sudo pacman -Syu wget --noconfirm
              else
                   echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}Package manager not found. Please install wget manually."
                   exit 1
@@ -88,7 +88,7 @@ install_dependencies() {
              elif command -v dnf &> /dev/null; then
                   sudo dnf install grep -y
              elif command -v pacman &> /dev/null; then
-                  sudo pacman -Sy grep --noconfirm
+                  sudo pacman -Syu grep --noconfirm
              else
                   echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}Package manager not found. Please install grep manually."
                   exit 1
